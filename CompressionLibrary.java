@@ -124,8 +124,12 @@ public class CompressionLibrary {
 		if (compressScale0_1 > 0 || compressScale0_1 <= 1) {
 			
 			try {
-				File input = tempPath.toFile();
-				BufferedImage inkjet = ImageIO.read(input);
+
+				String tempNamer = tempPath.toString() + "//tempForCompression.jpg";
+				Path tempPather = Paths.get(tempNamer);
+				File imageLocation = tempPather.toFile();
+				
+				BufferedImage inkjet = ImageIO.read(imageLocation);
 				
 				int newWidth = (int) (inkjet.getWidth() * compressScale0_1);
 				int newHeight = (int) (inkjet.getHeight() * compressScale0_1);
