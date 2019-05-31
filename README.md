@@ -2,10 +2,10 @@
 #                                                                           # 
 #                          FinalProjectOOPTEAM6                             #
 #                               Created By                                  #
-#                            <Blayne Goodman>                               #
-#                              <Daylan Hoff>                                #
-#                             <Robert Dragoo>                               #
-#                              <Kyle Arends>                                #
+#                            |Blayne Goodman|                               #
+#                              |Daylan Hoff|                                #
+#                             |Robert Dragoo|                               #
+#                              |Kyle Arends|                                #
 #                                                                           #
 #                                 Project                                   #
 #                           Library Of Libraries                            #
