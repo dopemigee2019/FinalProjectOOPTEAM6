@@ -1,5 +1,6 @@
 package MasterLib;
 import java.awt.Color;
+import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -139,8 +140,12 @@ public class CompressionLibrary {
 				
 				int newWidth = (int) (inkjet.getWidth() * compressScale0_1);
 				int newHeight = (int) (inkjet.getHeight() * compressScale0_1);
-				
+		
 				BufferedImage copied = new BufferedImage(newWidth, newHeight, BufferedImage.TYPE_INT_RGB);
+				
+		        Graphics2D scaleDown = copied.createGraphics();
+		        scaleDown.drawImage(inkjet, 0, 0, newWidth, newHeight, null);
+		        scaleDown.dispose();
 				
 				if (isGreyScale) {
 					for(int y = 0; y < newHeight; y++){
