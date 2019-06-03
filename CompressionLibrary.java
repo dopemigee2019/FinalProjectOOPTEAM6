@@ -140,7 +140,7 @@ public class CompressionLibrary {
 				
 				BufferedImage copied = new BufferedImage(newWidth, newHeight, BufferedImage.TYPE_INT_RGB);
 				
-				File output = input;
+				File output = imageLocation;
 				ImageIO.write(copied, "jpg", output);
 				isComplete = true;
 			}
