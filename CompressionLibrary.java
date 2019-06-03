@@ -82,7 +82,10 @@ public class CompressionLibrary {
 		if (exportType.length() == 3 || exportType.length() == 4) {
 			
 			try {
-				File input = tempPath.toFile();
+				String namer = tempPath.toString() + "//tempForCompression.jpg";
+				Path tempPather = Paths.get(namer);
+				File input = tempPather.toFile();
+				
 				BufferedImage inkjet = ImageIO.read(input);
 				BufferedImage copied = new BufferedImage(inkjet.getWidth(), inkjet.getHeight(), BufferedImage.TYPE_INT_RGB);
 				
@@ -94,6 +97,7 @@ public class CompressionLibrary {
 					
 					ImageIO.write(copied, exportType, output);
 					isComplete = true;
+					input.delete();
 					
 				} else if (exportType.length() == 4) {
 
@@ -101,6 +105,8 @@ public class CompressionLibrary {
 					
 					ImageIO.write(copied, export, output);
 					isComplete = true;
+					input.delete();
+					
 				}
 			}
 			catch (IOException a ) {
@@ -134,11 +140,25 @@ public class CompressionLibrary {
 				int newWidth = (int) (inkjet.getWidth() * compressScale0_1);
 				int newHeight = (int) (inkjet.getHeight() * compressScale0_1);
 				
-				if (isGreyScale) {
-					//TODO GreyScaling Code goes Here
-				}
-				
 				BufferedImage copied = new BufferedImage(newWidth, newHeight, BufferedImage.TYPE_INT_RGB);
+				
+				if (isGreyScale) {
+					for(int y = 0; y < newHeight; y++){
+						  for(int x = 0; x < newWidth; x++){
+							  
+							  int pixel = copied.getRGB(x,y);
+							  int red = (pixel >> 16)&0xff;
+							  int green = (pixel >> 8)&0xff;
+							  int blue = pixel&0xff;
+							  
+							  int average = (red + blue + green) / 3;
+							  
+							  pixel = (average << 24) | (average << 16) | (average << 8) | average;
+							  copied.setRGB(x, y, pixel);
+							  
+						  }
+					}
+				}
 				
 				File output = imageLocation;
 				ImageIO.write(copied, "jpg", output);
