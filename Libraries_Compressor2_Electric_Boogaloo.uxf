@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>310</x>
+      <y>520</y>
+      <w>150</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>External
+--
+bg=Green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>320</x>
+      <y>550</y>
+      <w>130</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>Application
+&lt;&lt;Master Program&gt;&gt;
+layer=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>560</x>
+      <y>560</y>
+      <w>590</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>ImageCompression
+--
+
+__+createTempFolder(tempName: String): Path__
+__+deleteTempFolder(toDelete: Path): boolean__
+
+__+importImgToJPG(readPath: Path, tempPath: Path): boolean__
+__+compressImg(tempPath: Path, compressScale0_1: double, isGreyscale: boolean): boolean__
+__+exportImg(tempPath: Path, savePath: Path, exportType: String): boolean__
+layer=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>540</x>
+      <y>300</y>
+      <w>630</w>
+      <h>440</h>
+    </coordinates>
+    <panel_attributes>Library of Libraries &lt;&lt;MASTER LIB&gt;&gt;
+--
+bg=#a1e3ed</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>440</x>
+      <y>570</y>
+      <w>140</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>120.0;70.0;60.0;70.0;60.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>560</x>
+      <y>340</y>
+      <w>590</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>SortIO
+--
+
+__+sortWithNulls(input: List&lt;T&gt;, nullIsLow: boolean): List&lt;T&gt;__
+__+sort(input: List&lt;T&gt;, isAscending: boolean): List&lt;T&gt;__
+__+sortStringAlphaNumeric(input: String, 123abcIsLow : boolean): String__
+__+sortStringsByLength(input: arrayList&lt;String&gt;, LengthIsLow: boolean): arrayList&lt;String&gt;__
+__+sortByPriority(input: List&lt;T&gt;, priorityIsLow, IPrioritizable: Comparable&lt;int&gt;): List&lt;T&gt;__
+layer=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>410</x>
+      <y>410</y>
+      <w>170</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>150.0;10.0;90.0;10.0;90.0;70.0;10.0;70.0;10.0;140.0</additional_attributes>
+  </element>
+</diagram>
