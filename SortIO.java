@@ -42,6 +42,8 @@ public class SortIO {
 	public static String sortStringAlphaNumeric(String input, boolean abc123IsLow) {
 		String output = input;
 		
+		if (input == null) throw new IllegalArgumentException("Cannot be Null");
+		
 		if (abc123IsLow) {
 			try {
 				char[] sortArray = input.toCharArray();
@@ -68,6 +70,8 @@ public class SortIO {
 	
 	public static ArrayList<String> sortStringsByLength(ArrayList<String> input, boolean lengthIsLow){
 		ArrayList<String> output = input;
+		
+		if (input == null) throw new IllegalArgumentException("Cannot be Null");
 		
 		if (lengthIsLow) {
 			try {

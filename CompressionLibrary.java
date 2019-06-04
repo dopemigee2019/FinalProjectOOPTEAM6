@@ -14,6 +14,8 @@ public class CompressionLibrary {
 	
 	public static Path createTempFolder(String tempName){
 		
+		if (tempName == null) throw new IllegalArgumentException("Cannot be Null");
+		
 		Path dirPath = Paths.get(System.getProperty("user.dir"));
 		Path tempPath = null;
 		try {
@@ -37,6 +39,8 @@ public class CompressionLibrary {
 	
 	public static boolean deleteTempFolder(Path toDelete) {
 		
+		if (toDelete == null) throw new IllegalArgumentException("Cannot be Null");
+		
 		boolean isComplete = false;
 		try {
 			if (toDelete != null) {
@@ -52,6 +56,8 @@ public class CompressionLibrary {
 	}
 	
 	public static boolean importImgToJPG(Path readPath, Path tempPath) {
+		
+		if (readPath == null || tempPath == null) throw new IllegalArgumentException("Cannot be Null");
 		
 		boolean isComplete = false;
 		try {
@@ -77,6 +83,8 @@ public class CompressionLibrary {
 	}
 	
 	public static boolean exportImg(Path tempPath, Path savePath, String exportType) {
+		
+		if (tempPath == null || savePath == null || exportType == null) throw new IllegalArgumentException("Cannot be Null");
 		
 		boolean isComplete = false;
 		
@@ -125,6 +133,8 @@ public class CompressionLibrary {
 	
 	
 	public static boolean compressImg(Path tempPath, double compressScale0_1, boolean isGreyScale) {
+		
+		if (tempPath == null) throw new IllegalArgumentException("Cannot be Null");
 		
 		boolean isComplete = false;
 		
