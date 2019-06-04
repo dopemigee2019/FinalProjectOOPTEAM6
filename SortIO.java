@@ -103,7 +103,7 @@ public class SortIO {
 			
 			}
 
-		return null;
+		return input;
 	}
 
 }
