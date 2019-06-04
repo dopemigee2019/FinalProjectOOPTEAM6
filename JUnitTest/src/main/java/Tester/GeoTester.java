@@ -6,6 +6,7 @@ import org.junit.Test;
 import lib.GeometryIO;
 
 public class GeoTester {
+
 	@Test
 	public void areaOfTriangleValidDoubleBase() { // valid double
 		// Arrange
@@ -13,7 +14,8 @@ public class GeoTester {
 		// Act
 		double tester = GeometryIO.areaOfTriangle(base, height);
 		// Assert
-		assertEquals(tester, tester, 10);
+		// 1.0 5.0 13
+		assertEquals(10, tester, 0);
 	}
 
 	@Test(expected = java.lang.IllegalArgumentException.class)
@@ -41,7 +43,7 @@ public class GeoTester {
 		// Act
 		double tester = GeometryIO.areaOfTriangle(base, height);
 		// Assert
-		assertEquals(tester, tester, 10);
+		assertEquals(10, tester, 00);
 	}
 
 	@Test(expected = java.lang.IllegalArgumentException.class)
@@ -72,7 +74,7 @@ public class GeoTester {
 		// Act
 		double tester = GeometryIO.areaOfRectangle(base, height);
 		// Assert
-		assertEquals(tester, tester, 25);
+		assertEquals(25, tester, 0);
 	}
 
 	@Test(expected = java.lang.IllegalArgumentException.class)
@@ -100,7 +102,7 @@ public class GeoTester {
 		// Act
 		double tester = GeometryIO.areaOfRectangle(base, height);
 		// Assert
-		assertEquals(tester, tester, 25);
+		assertEquals(25, tester, 0);
 	}
 
 	@Test(expected = java.lang.IllegalArgumentException.class)
@@ -131,7 +133,7 @@ public class GeoTester {
 		// Act
 		double tester = GeometryIO.areaOfTrapezoid(base, base2, height);
 		// Assert
-		assertEquals(tester, tester, 25);
+		assertEquals(25, tester, 0);
 	}
 
 	@Test(expected = java.lang.IllegalArgumentException.class)
@@ -159,7 +161,7 @@ public class GeoTester {
 		// Act
 		double tester = GeometryIO.areaOfTrapezoid(base, base2, height);
 		// Assert
-		assertEquals(tester, tester, 36);
+		assertEquals(36, tester, 0);
 	}
 
 	@Test(expected = java.lang.IllegalArgumentException.class)
@@ -186,7 +188,7 @@ public class GeoTester {
 		// Act
 		double tester = GeometryIO.areaOfTrapezoid(base, base2, height);
 		// Assert
-		assertEquals(tester, tester, 1);
+		assertEquals(1, tester, 0);
 	}
 
 	@Test(expected = java.lang.IllegalArgumentException.class)
@@ -217,7 +219,7 @@ public class GeoTester {
 		// Act
 		double tester = GeometryIO.areaOfParallelogram(base, height);
 		// Assert
-		assertEquals(tester, tester, 26);
+		assertEquals(26, tester, 0);
 	}
 
 	@Test(expected = java.lang.IllegalArgumentException.class)
@@ -245,7 +247,7 @@ public class GeoTester {
 		// Act
 		double tester = GeometryIO.areaOfParallelogram(base, height);
 		// Assert
-		assertEquals(tester, tester, 22);
+		assertEquals(22, tester, 0);
 	}
 
 	@Test(expected = java.lang.IllegalArgumentException.class)
@@ -276,7 +278,7 @@ public class GeoTester {
 		// Act
 		double tester = GeometryIO.areaOfCircle(radius);
 		// Assert
-		assertEquals(tester, tester, Math.PI);
+		assertEquals(Math.PI, tester, 0.1);
 	}
 
 	@Test(expected = java.lang.IllegalArgumentException.class)
@@ -296,278 +298,13 @@ public class GeoTester {
 		double tester = GeometryIO.areaOfCircle(radius);
 		// Assert
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	//////////////////////////////////////
 	// Volume Section //
 	//////////////////////////////////////
 	/*
-	 * volumeSurfaceAreaOfRectangularPrism test
+	 * surfaceAreaOfRectangularPrism test
 	 */
-	@Test
-	public void volumeSurfaceAreaOfRectangularPrismValidDoublelength() { // valid double
-		// Arrange
-		double length = 7.2, width = 3, height = 1;
-		// Act
-		double tester = GeometryIO.surfaceAreaOfRectangularPrism(length, width, height);
-		// Assert
-		assertEquals(tester, tester, 21.6);
-	}
-
-	@Test(expected = java.lang.IllegalArgumentException.class)
-	public void volumeSurfaceAreaOfRectangularPrismInvalidDoublelength() { // invalid double = 0
-		// Arrange
-		double length = 0, width = 3, height = 1;
-		// Act
-		double tester = GeometryIO.surfaceAreaOfRectangularPrism(length, width, height);
-		// Assert
-	}
-
-	@Test(expected = java.lang.IllegalArgumentException.class)
-	public void volumeSurfaceAreaOfRectangularPrismNegativeDoublelength() { // Negative double
-		// Arrange
-		double length = 7.2, width = 3, height = 1;
-		// Act
-		double tester = GeometryIO.surfaceAreaOfRectangularPrism(-3, width, height);
-		// Assert
-	}
-
-	@Test
-	public void volumeSurfaceAreaOfRectangularPrismValidDoublewidth() { // valid double
-		// Arrange
-		double length = 3, width = 6.2, height = 1;
-		// Act
-		double tester = GeometryIO.surfaceAreaOfRectangularPrism(length, width, height);
-		// Assert
-		assertEquals(tester, tester, 18.6);
-	}
-
-	@Test(expected = java.lang.IllegalArgumentException.class)
-	public void volumeSurfaceAreaOfRectangularPrismInvalidDoublewidth() { // invalid double = 0
-		// Arrange
-		double length = 7.2, width = 0, height = 1;
-		// Act
-		double tester = GeometryIO.surfaceAreaOfRectangularPrism(length, width, height);
-		// Assert
-	}
-
-	@Test(expected = java.lang.IllegalArgumentException.class)
-	public void volumeSurfaceAreaOfRectangularPrismNegativeDoublewidth() { // Negative double
-		// Arrange
-		double length = 7.2, width = -9, height = 1;
-		// Act
-		double tester = GeometryIO.surfaceAreaOfRectangularPrism(length, width, height);
-		// Assert
-	}
-
-	@Test
-	public void volumeSurfaceAreaOfRectangularPrismValidDoubleHeight() { // valid double
-		// Arrange
-		double length = 2, width = 6.2, height = 1;
-		// Act
-		double tester = GeometryIO.surfaceAreaOfRectangularPrism(length, width, height);
-		// Assert
-		assertEquals(tester, tester, 12.4);
-	}
-
-	@Test(expected = java.lang.IllegalArgumentException.class)
-	public void volumeSurfaceAreaOfRectangularPrismInvalidDoubleHeight() { // invalid double = 0
-		// Arrange
-		double length = 7.2, width = 3, height = 0;
-		// Act
-		double tester = GeometryIO.surfaceAreaOfRectangularPrism(length, width, height);
-		// Assert
-	}
-
-	@Test(expected = java.lang.IllegalArgumentException.class)
-	public void volumeSurfaceAreaOfRectangularPrismNegativeDoubleHeight() { // Negative double
-		// Arrange
-		double length = 7.2, width = 3, height = -1;
-		// Act
-		double tester = GeometryIO.surfaceAreaOfRectangularPrism(length, width, height);
-		// Assert
-	}
-
-	/*
-	 * volumeOfGenericPrism
-	 */
-	@Test
-	public void volumeOfGenericPrismValidDoubleBase() { // valid double
-		// Arrange
-		double a = 5,  s = 4;
-		// Act
-		//.surfaceAreaOfTrapazoid(base, height);
-		double tester = GeometryIO.surfaceAreaOfGeneralPrism(1, 1, 1, 1, 1, 1);
-		// Assert
-		assertEquals(tester, tester, 1);
-	}
-	@Test(expected = java.lang.IllegalArgumentException.class)
-	public void volumeOfGenericPrismInvalidDoubleBase() { // invalid double = 0
-		// Arrange
-		double base = 0,  height = 4;
-		// Act
-		double tester = GeometryIO.surfaceAreaOfGeneralPrism(0, 1, 1, 1, 1, 1);
-		// Assert
-	}
-
-	@Test(expected = java.lang.IllegalArgumentException.class)
-	public void volumeOfGenericPrismNegativeDoubleBase() { // Negative double
-		// Arrange
-		double a;
-		// Act
-		double tester = GeometryIO.surfaceAreaOfGeneralPrism(-1, 1, 1, 1, 1, 1);
-		// Assert
-	}
-	@Test
-	public void volumeOfGenericPrismValidDoubleBase2() { // valid double
-		// Arrange
-		double a = 5,  s = 4;
-		// Act
-		//.surfaceAreaOfTrapazoid(base, height);
-		double tester = GeometryIO.surfaceAreaOfGeneralPrism(1, 1, 1, 1, 1, 1);
-		// Assert
-		assertEquals(tester, tester, 1);
-	}
-
-	@Test(expected = java.lang.IllegalArgumentException.class)
-	public void volumeOfGenericPrismInvalidDoubleBase2() { // invalid double = 0
-		// Arrange
-		double base = 0,  height = 4;
-		// Act
-		double tester = GeometryIO.surfaceAreaOfGeneralPrism(1, 0, 1, 1, 1, 1);
-		// Assert
-	}
-
-	@Test(expected = java.lang.IllegalArgumentException.class)
-	public void volumeOfGenericPrismNegativeDoubleBase2() { // Negative double
-		// Arrange
-		double a;
-		// Act
-		double tester = GeometryIO.surfaceAreaOfGeneralPrism(1, -1, 1, 1, 1, 1);
-		// Assert
-	}
-	@Test
-	public void volumeOfGenericPrismValidDoubleBase3() { // valid double
-		// Arrange
-		double a = 5,  s = 4;
-		// Act
-		//.surfaceAreaOfTrapazoid(base, height);
-		double tester = GeometryIO.surfaceAreaOfGeneralPrism(1, 1, 1, 1, 1, 1);
-		// Assert
-		assertEquals(tester, tester, 1);
-	}
-
-	@Test(expected = java.lang.IllegalArgumentException.class)
-	public void volumeOfGenericPrismInvalidDoubleBase3() { // invalid double = 0
-		// Arrange
-		double base = 0,  height = 4;
-		// Act
-		double tester = GeometryIO.surfaceAreaOfGeneralPrism(0, 0, 0, 0, 0, 0);
-		// Assert
-	}
-
-	@Test(expected = java.lang.IllegalArgumentException.class)
-	public void volumeOfGenericPrismNegativeDoubleBase3() { // Negative double
-		// Arrange
-		double a;
-		// Act
-		double tester = GeometryIO.surfaceAreaOfGeneralPrism(-1, -1, -1, -1, -1, -1);
-		// Assert
-	}
-	@Test
-	public void volumeOfGenericPrismValidDoubleBase4() { // valid double
-		// Arrange
-		double a = 5,  s = 4;
-		// Act
-		//.surfaceAreaOfTrapazoid(base, height);
-		double tester = GeometryIO.surfaceAreaOfGeneralPrism(1, 1, 1, 1, 1, 1);
-		// Assert
-		assertEquals(tester, tester, 1);
-	}
-
-	@Test(expected = java.lang.IllegalArgumentException.class)
-	public void volumeOfGenericPrismInvalidDoubleBase4() { // invalid double = 0
-		// Arrange
-		double base = 0,  height = 4;
-		// Act
-		double tester = GeometryIO.surfaceAreaOfGeneralPrism(0, 0, 0, 0, 0, 0);
-		// Assert
-	}
-
-	@Test(expected = java.lang.IllegalArgumentException.class)
-	public void volumeOfGenericPrismNegativeDoubleBase4() { // Negative double
-		// Arrange
-		double a;
-		// Act
-		double tester = GeometryIO.surfaceAreaOfGeneralPrism(-1, -1, -1, -1, -1, -1);
-		// Assert
-	}
-	@Test
-	public void volumeOfGenericPrismValidDoubleBase5() { // valid double
-		// Arrange
-		double a = 5,  s = 4;
-		// Act
-		//.surfaceAreaOfTrapazoid(base, height);
-		double tester = GeometryIO.surfaceAreaOfGeneralPrism(1, 1, 1, 1, 1, 1);
-		// Assert
-		assertEquals(tester, tester, 1);
-	}
-
-	@Test(expected = java.lang.IllegalArgumentException.class)
-	public void volumeOfGenericPrismInvalidDoubleBase5() { // invalid double = 0
-		// Arrange
-		double base = 0,  height = 4;
-		// Act
-		double tester = GeometryIO.surfaceAreaOfGeneralPrism(0, 0, 0, 0, 0, 0);
-		// Assert
-	}
-
-	@Test(expected = java.lang.IllegalArgumentException.class)
-	public void volumeOfGenericPrismNegativeDoubleBase5() { // Negative double
-		// Arrange
-		double a;
-		// Act
-		double tester = GeometryIO.surfaceAreaOfGeneralPrism(-1, -1, -1, -1, -1, -1);
-		// Assert
-	}
-	@Test
-	public void volumeOfGenericPrismValidDoubleBase6() { // valid double
-		// Arrange
-		double a = 5,  s = 4;
-		// Act
-		//.surfaceAreaOfTrapazoid(base, height);
-		double tester = GeometryIO.surfaceAreaOfGeneralPrism(1, 1, 1, 1, 1, 1);
-		// Assert
-		assertEquals(tester, tester, 1);
-	}
-
-	@Test(expected = java.lang.IllegalArgumentException.class)
-	public void volumeOfGenericPrismInvalidDoubleBase6() { // invalid double = 0
-		// Arrange
-		double base = 0,  height = 4;
-		// Act
-		double tester = GeometryIO.surfaceAreaOfGeneralPrism(0, 0, 0, 0, 0, 0);
-		// Assert
-	}
-	public void volumeOfGenericPrismNegativeDoubleBase6() { // Negative double
-		// Arrange
-		double a;
-		// Act
-		double tester = GeometryIO.surfaceAreaOfGeneralPrism(-1, -1, -1, -1, -1, -1);
-		// Assert
-	}
-	
-	
-	
 
 	/*
 	 * volumeOfCircularPrism
@@ -575,17 +312,17 @@ public class GeoTester {
 	@Test
 	public void volumeOfRightCircularPrismValidDoubleBase() { // Valid Double
 		// Arrange
-		double radius = 4.76,  height = 4;
+		double radius = 4.76, height = 4;
 		// Act
 		double tester = GeometryIO.volumeOfRightCircularPrism(radius, height);
 		// Assert
-		assertEquals(tester, tester, 284.72);
+		assertEquals(284.72, tester, .1);
 	}
 
 	@Test(expected = java.lang.IllegalArgumentException.class)
 	public void volumeOfRightCircularPrismInvalidDoubleBase() { // invalid double
 		// Arrange
-		double radius = 0,  height = 4;
+		double radius = 0, height = 4;
 		// Act
 		double tester = GeometryIO.volumeOfRightCircularPrism(radius, height);
 		// Assert
@@ -594,7 +331,7 @@ public class GeoTester {
 	@Test(expected = java.lang.IllegalArgumentException.class)
 	public void volumeOfRightCircularPrismNegativeDoubleBase() { // Negative double
 		// Arrange
-		double radius = 4.76,  height = 4;
+		double radius = 4.76, height = 4;
 		// Act
 		double tester = GeometryIO.volumeOfRightCircularPrism(-3, height);
 		// Assert
@@ -603,17 +340,17 @@ public class GeoTester {
 	@Test
 	public void volumeOfRightCircularPrismValidDoubleHeight() { // Valid Double
 		// Arrange
-		double radius = 4,  height = 4.76;
+		double radius = 4, height = 4.76;
 		// Act
 		double tester = GeometryIO.volumeOfRightCircularPrism(radius, height);
 		// Assert
-		assertEquals(tester, tester, 284.72);
+		assertEquals(284.72, tester, .1);
 	}
 
 	@Test(expected = java.lang.IllegalArgumentException.class)
 	public void volumeOfRightCircularPrismInvalidDoubleHeight() { // invalid double
 		// Arrange
-		double radius = 4.76,  height = 0;
+		double radius = 4.76, height = 0;
 		// Act
 		double tester = GeometryIO.volumeOfRightCircularPrism(radius, height);
 		// Assert
@@ -622,7 +359,7 @@ public class GeoTester {
 	@Test(expected = java.lang.IllegalArgumentException.class)
 	public void volumeOfRightCircularPrismNegativeDoubleHeight() { // Negative double
 		// Arrange
-		double radius = 4.76,  height = -3;
+		double radius = 4.76, height = -3;
 		// Act
 		double tester = GeometryIO.volumeOfRightCircularPrism(radius, height);
 		// Assert
@@ -631,17 +368,17 @@ public class GeoTester {
 	@Test
 	public void volumeOfsquarePyramidValidDoubleHeight() { // Valid Double
 		// Arrange
-		double base = 4,  height = 4.76;
+		double base = 4, height = 4.76;
 		// Act
 		double tester = GeometryIO.volumeOfsquarePyramid(base, height);
 		// Assert
-		assertEquals(tester, tester, 180.3);
+		assertEquals(25.39, tester, .1);
 	}
 
 	@Test(expected = java.lang.IllegalArgumentException.class)
 	public void volumeOfsquarePyramidInvalidDoubleHeight() { // invalid double
 		// Arrange
-		double base = 0,  height = 4.76;
+		double base = 0, height = 4.76;
 		// Act
 		double tester = GeometryIO.volumeOfsquarePyramid(base, height);
 		// Assert
@@ -650,7 +387,7 @@ public class GeoTester {
 	@Test(expected = java.lang.IllegalArgumentException.class)
 	public void volumeOfsquarePyramidNegativeDoubleHeight() { // Negative double
 		// Arrange
-		double base = 4,  height = 4.76;
+		double base = 4, height = 4.76;
 		// Act
 		double tester = GeometryIO.volumeOfsquarePyramid(-3, height);
 		// Assert
@@ -659,17 +396,17 @@ public class GeoTester {
 	@Test
 	public void volumeOfsquarePyramidValidDoubleSlantHeight() { // Valid Double
 		// Arrange
-		double base = 4,  height = 4.76;
+		double base = 4, height = 4.76;
 		// Act
 		double tester = GeometryIO.volumeOfsquarePyramid(base, height);
 		// Assert
-		assertEquals(tester, tester, 180.3);
+		assertEquals(180.3, tester, .1);
 	}
 
 	@Test(expected = java.lang.IllegalArgumentException.class)
 	public void volumeOfsquarePyramidInvalidDoubleSlantHeight() { // invalid double
 		// Arrange
-		double base = 4,  height = 0;
+		double base = 4, height = 0;
 		// Act
 		double tester = GeometryIO.volumeOfsquarePyramid(base, height);
 		// Assert
@@ -678,7 +415,7 @@ public class GeoTester {
 	@Test(expected = java.lang.IllegalArgumentException.class)
 	public void volumeOfsquarePyramidNegativeDoubleSlantHeight() { // Negative double
 		// Arrange
-		double base = 4,  height = -4.76;
+		double base = 4, height = -4.76;
 		// Act
 		double tester = GeometryIO.volumeOfsquarePyramid(base, height);
 		// Assert
@@ -691,110 +428,87 @@ public class GeoTester {
 	@Test
 	public void volumeOfRightCircularConeValidDouble() { // Valid Double
 		// Arrange
-		double radius = 4,  height = 5.76;
+		double radius = 4, height = 5.76;
 		// Act
 		double tester = GeometryIO.volumeOfRightCircularCone(GeometryIO.areaOfCircle(radius), height, radius);
 		// Assert
-		assertEquals(tester, tester, 96.51);
+		assertEquals(96.51, tester, .1);
 	}
-//	@Test(expected = java.lang.IllegalArgumentException.class)
-//	public void volumeOfRightCircularConeInvalidDouble() { // Valid Double
-//		// Arrange
-//		double radius = 4,  height = 5.76, zero = 0;
-//		// Act
-//		double tester = GeometryIO.volumeOfRightCircularCone(zero, height, radius);
-//		// Assert
-//	}
-//	@Test(expected = java.lang.IllegalArgumentException.class)
-//	public void volumeOfRightCircularConeNegativeDouble() { // Valid Double
-//		// Arrange
-//		double radius = 4,  height = 5.76, negative = -123;
-//		// Act
-//		double tester = GeometryIO.volumeOfRightCircularCone(negative, height, radius);
-//		// Assert
-//	}
+
+	@Test(expected = java.lang.IllegalArgumentException.class)
+	public void volumeOfRightCircularConeInvalidDouble() { // Valid Double
+		// Arrange
+		double radius = 4, height = 5.76, zero = 0;
+		// Act
+		double tester = GeometryIO.volumeOfRightCircularCone(zero, height, radius);
+		// Assert
+	}
+
+	@Test(expected = java.lang.IllegalArgumentException.class)
+	public void volumeOfRightCircularConeNegativeDouble() { // Valid Double
+		// Arrange
+		double radius = 4, height = 5.76, negative = -123;
+		// Act
+		double tester = GeometryIO.volumeOfRightCircularCone(negative, height, radius);
+		// Assert
+	}
+
 	@Test
 	public void volumeOfRightCircularConeValidDouble2() { // Valid Double
 		// Arrange
-		double radius = 4,  height = 5.76;
+		double radius = 4, height = 5.76;
 		// Act
 		double tester = GeometryIO.volumeOfRightCircularCone(GeometryIO.areaOfCircle(radius), height, radius);
 		// Assert
 		assertEquals(tester, tester, 96.51);
 	}
+
 	@Test(expected = java.lang.IllegalArgumentException.class)
 	public void volumeOfRightCircularConeInvalidDouble2() { // Valid Double
 		// Arrange
-		double radius = 4,  height = 5.76, zero = 0;
+		double radius = 4, height = 5.76, zero = 0;
 		// Act
 		double tester = GeometryIO.volumeOfRightCircularCone(zero, zero, radius);
 		// Assert
 	}
+
 	@Test(expected = java.lang.IllegalArgumentException.class)
 	public void volumeOfRightCircularConeNegativeDouble2() { // Valid Double
 		// Arrange
-		double radius = 4,  height = 5.76, negative = -123;
+		double radius = 4, height = 5.76, negative = -123;
 		// Act
 		double tester = GeometryIO.volumeOfRightCircularCone(negative, negative, radius);
 		// Assert
 	}
+
 	@Test
 	public void volumeOfRightCircularConeValidDouble3() { // Valid Double
 		// Arrange
-		double radius = 4,  height = 5.76;
+		double radius = 4, height = 5.76;
 		// Act
 		double tester = GeometryIO.volumeOfRightCircularCone(GeometryIO.areaOfCircle(radius), height, radius);
 		// Assert
-		assertEquals(tester, tester, 96.51);
+		assertEquals(96.51, tester, .1);
 	}
+
 	@Test(expected = java.lang.IllegalArgumentException.class)
 	public void volumeOfRightCircularConeInvalidDouble3() { // Valid Double
 		// Arrange
-		double radius = 4,  height = 5.76, zero = 0;
+		double radius = 4, height = 5.76, zero = 0;
 		// Act
 		double tester = GeometryIO.volumeOfRightCircularCone(zero, height, zero);
 		// Assert
 	}
+
 	@Test(expected = java.lang.IllegalArgumentException.class)
 	public void volumeOfRightCircularConeNegativeDouble3() { // Valid Double
 		// Arrange
-		double radius = 4,  height = 5.76, negative = -123;
+		double radius = 4, height = 5.76, negative = -123;
 		// Act
 		double tester = GeometryIO.volumeOfRightCircularCone(negative, height, negative);
 		// Assert
 	}
-	
-	
-	/*
-	 * Sphere
-	 */
-	@Test
-	public void volumeOfSphereValidDoubleSlantHeight() { // Valid Double
-		// Arrange
-		double radius = 4;
-		// Act
-		double tester = GeometryIO.surfaceAreaOfSphere(radius);
-		// Assert
-		assertEquals(tester, tester, 3.01);
-	}
 
-	@Test(expected = java.lang.IllegalArgumentException.class)
-	public void volumeOfSphereInvalidDoubleSlantHeight() { // invalid double
-		// Arrange
-		double radius = 0;
-		// Act
-		double tester = GeometryIO.surfaceAreaOfSphere(radius);
-		// Assert
-	}
-
-	@Test(expected = java.lang.IllegalArgumentException.class)
-	public void volumeOfSphereNegativeDoubleSlantHeight() { // Negative double
-		// Arrange
-		double radius = -5;
-		// Act
-		double tester = GeometryIO.surfaceAreaOfSphere(radius);
-		// Assert
-	}
 	//////////////////////////////////
 	// Lines.. So many Lines//
 	// coordinateDistanceFormula
@@ -802,224 +516,152 @@ public class GeoTester {
 	@Test
 	public void lineEquationX1Valid() { // Valid Double
 		// Arrange
-		
+		double x1 = 1, x2 = 2, y1 = 1, y2 = 1;
 		// Act
-		double tester = GeometryIO.coordinateDistanceFormula(1, 2, 1, 1);
-		System.out.println(tester);
+		double tester = GeometryIO.coordinateDistanceFormula(x1, x2, y1, y2);
 		// Assert
-		assertEquals(tester, tester, 1.0);
-	}
-	/*
-	@Test(expected = java.lang.IllegalArgumentException.class)
-	public void lineEquationX1Inalid() { // invalid double
-		// Arrange
-
-		// Act
-
-		// Assert
+		assertEquals(1, tester, 0);
 	}
 
-	@Test(expected = java.lang.IllegalArgumentException.class)
-	public void lineEquationX1Negative() { // Negative double
+	@Test
+	public void lineEquationX1Inalid() { // Negitive double
 		// Arrange
-
+		double x1 = -1, x2 = -2, y1 = -1, y2 = -1;
 		// Act
+		double tester = GeometryIO.coordinateDistanceFormula(x1, x2, y1, y2);
+		// Assert
+		assertEquals(1, tester, 0);
+	}
 
+	@Test(expected = java.lang.IllegalArgumentException.class)
+	public void lineEquationX1Negative() { // Same x's double
+		// Arrange
+		double x1 = 1, x2 = 1, y1 = 1, y2 = 1;
+		// Act
+		double tester = GeometryIO.coordinateDistanceFormula(x1, x2, y1, y2);
 		// Assert
 	}
 
 	@Test
-	public void lineEquationX2Valid() { // Valid Double
+	public void lineEquationX2Valid() { // all zero
 		// Arrange
-
+		double x1 = 0, x2 = -1, y1 = 0, y2 = 0;
 		// Act
+		double tester = GeometryIO.coordinateDistanceFormula(x1, x2, y1, y2);
+		// Assert
+		assertEquals(1.0, tester, 0);
+	}
+
+	@Test
+	public void lineEquationX2ValidP2() { // all zero
+		// Arrange
+		double x1 = 1, x2 = 0, y1 = 0, y2 = 0;
+		// Act
+		double tester = GeometryIO.coordinateDistanceFormula(x1, x2, y1, y2);
+		// Assert
+		assertEquals(1.0, tester, 0);
+	}
+
+	@Test
+	public void midpointX1Valid() { // Valid Double
+		// Arrange
+		double x1 = 1, x2 = 2, y1 = 1, y2 = 1;
+		// Act
+		String tester = GeometryIO.coordinateMidpointFormula(x1, x2, y1, y2);
 
 		// Assert
+		assertEquals(tester, "( 1.5 , 1.0 )");
+	}
+
+	@Test
+	public void midpointX1Inalid() { // Negitive double
+		// Arrange
+		double x1 = -1, x2 = -2, y1 = -1, y2 = -1;
+		// Act
+		String tester = GeometryIO.coordinateMidpointFormula(x1, x2, y1, y2);
+		// Assert
+		assertEquals(tester, "( -1.5 , -1.0 )");
 	}
 
 	@Test(expected = java.lang.IllegalArgumentException.class)
-	public void lineEquationX2Inalid() { // invalid double
+	public void midpointX1Negative() { // Same x's double
 		// Arrange
-
+		double x1 = 1, x2 = 1, y1 = 1, y2 = 1;
 		// Act
-
-		// Assert
-	}
-
-	@Test(expected = java.lang.IllegalArgumentException.class)
-	public void lineEquationX2Negative() { // Negative double
-		// Arrange
-
-		// Act
-
-		// Assert
-	}
-
-
-	public void lineEquationY1Valid() { // Valid Double
-		// Arrange
-
-		// Act
-
-		// Assert
-	}
-
-	@Test(expected = java.lang.IllegalArgumentException.class)
-	public void lineEquationY1Inalid() { // invalid double
-		// Arrange
-
-		// Act
-
-		// Assert
-	}
-
-	@Test(expected = java.lang.IllegalArgumentException.class)
-	public void lineEquationY1Negative() { // Negative double
-		// Arrange
-
-		// Act
-
+		String tester = GeometryIO.coordinateMidpointFormula(x1, x2, y1, y2);
 		// Assert
 	}
 
 	@Test
-	public void lineEquationY2Valid() { // Valid Double
+	public void midpointX2Valid() { // all zero
 		// Arrange
-
+		double x1 = 0, x2 = -1, y1 = 0, y2 = 0;
 		// Act
-
+		String tester = GeometryIO.coordinateMidpointFormula(x1, x2, y1, y2);
 		// Assert
+		assertEquals(tester, "( -0.5 , 0.0 )");
 	}
 
-	@Test(expected = java.lang.IllegalArgumentException.class)
-	public void lineEquationY2Inalid() { // invalid double
-		// Arrange
-
-		// Act
-
-		// Assert
-	}
-
-	@Test(expected = java.lang.IllegalArgumentException.class)
-	public void lineEquationY2Negative() { // Negative double
-		// Arrange
-
-		// Act
-
-		// Assert
-	}
-
-//	/*
-	 * 
-//	 /
 	@Test
-	public void coordinateFormulaX1Valid() { // Valid Double
+	public void midpointX2ValidP2() { // all zero
 		// Arrange
-
+		double x1 = 1, x2 = 0, y1 = 0, y2 = 0;
 		// Act
-
+		String tester = GeometryIO.coordinateMidpointFormula(x1, x2, y1, y2);
 		// Assert
+		assertEquals(tester, "( 0.5 , 0.0 )");
+	}
+
+	// SlopeFormula
+	@Test
+	public void slopeFormulaX1Valid() { // Valid Double Slope 0
+		// Arrange
+		double x1 = 1, x2 = 2, y1 = 1, y2 = 1;
+		// Act
+		double tester = GeometryIO.coordinateSlopeFormula(x1, x2, y1, y2);
+		// Assert
+		assertEquals(0, tester, 0);
+	}
+
+	@Test
+	public void slopeFormulaX1Inalid() { // Negitive double slope 0
+		// Arrange
+		double x1 = -1, x2 = -2, y1 = -1, y2 = -1;
+		// Act
+		double tester = GeometryIO.coordinateSlopeFormula(x1, x2, y1, y2);
+		// Assert
+		assertEquals(0, tester, 0);
 	}
 
 	@Test(expected = java.lang.IllegalArgumentException.class)
-	public void coordinateFormulaX1Inalid() { // invalid double
+	public void slopeFormulaX1Negative() { // Same x's double
 		// Arrange
-
+		double x1 = 1, x2 = 1, y1 = 1, y2 = 1;
 		// Act
-
-		// Assert
-	}
-
-	@Test(expected = java.lang.IllegalArgumentException.class)
-	public void coordinateFormulaX1Negative() { // Negative double
-		// Arrange
-
-		// Act
-
+		double tester = GeometryIO.coordinateSlopeFormula(x1, x2, y1, y2);
 		// Assert
 	}
 
 	@Test
-	public void coordinateFormulaX2Valid() { // Valid Double
+	public void slopeFormulaX2Valid() { // Negitive Slope
 		// Arrange
-
+		double x1 = 0, x2 = 1, y1 = 1, y2 = 0;
 		// Act
-
+		double tester = GeometryIO.coordinateSlopeFormula(x1, x2, y1, y2);
 		// Assert
-	}
-
-	@Test(expected = java.lang.IllegalArgumentException.class)
-	public void coordinateFormulaX2Inalid() { // invalid double
-		// Arrange
-
-		// Act
-
-		// Assert
-	}
-
-	@Test(expected = java.lang.IllegalArgumentException.class)
-	public void coordinateFormulaX2Negative() { // Negative double
-		// Arrange
-
-		// Act
-
-		// Assert
+		assertEquals(-1, tester, -1);
 	}
 
 	@Test
-	public void coordinateFormulaY1Valid() { // Valid Double
+	public void slopeFormulaX2ValidP2() { // all zero
 		// Arrange
-
+		double x1 = 2, x2 = 4, y1 = 0, y2 = 1;
 		// Act
-
+		double tester = GeometryIO.coordinateSlopeFormula(x1, x2, y1, y2);
 		// Assert
+		assertEquals(2, tester, 2);
 	}
 
-	@Test(expected = java.lang.IllegalArgumentException.class)
-	public void coordinateFormulaY1Inalid() { // invalid double
-		// Arrange
-
-		// Act
-
-		// Assert
-	}
-
-	@Test(expected = java.lang.IllegalArgumentException.class)
-	public void coordinateFormulaY1Negative() { // Negative double
-		// Arrange
-
-		// Act
-
-		// Assert
-	}
-
-	@Test
-	public void coordinateFormulaY2Valid() { // Valid Double
-		// Arrange
-
-		// Act
-
-		// Assert
-	}
-
-	@Test(expected = java.lang.IllegalArgumentException.class)
-	public void coordinateFormulaY2Inalid() { // invalid double
-		// Arrange
-
-		// Act
-
-		// Assert
-	}
-
-	@Test(expected = java.lang.IllegalArgumentException.class)
-	public void coordinateFormulaY2Negative() { // Negative double
-		// Arrange
-
-		// Act
-
-		// Assert
-	}
-*/
 	/*
 	 * distanceTraveled
 	 */
@@ -1030,7 +672,7 @@ public class GeoTester {
 		// Act
 		double tester = GeometryIO.distanceTraveled(rate, time);
 		// Assert
-		assertEquals(tester, tester, 96.51); //75.9 miles and kilos?
+		assertEquals(75.9, tester, .1); // 75.9 miles and kilos?
 	}
 
 	@Test(expected = java.lang.IllegalArgumentException.class)
@@ -1059,7 +701,7 @@ public class GeoTester {
 		// Act
 		double tester = GeometryIO.distanceTraveled(rate, time);
 		// Assert
-		assertEquals(tester, tester, 96.51); //75.9 miles and kilos?
+		assertEquals(110.4, tester, .1); // 75.9 miles and kilos?
 	}
 
 	@Test(expected = java.lang.IllegalArgumentException.class)
@@ -1090,7 +732,7 @@ public class GeoTester {
 		// Act
 		double tester = GeometryIO.polygonAngleFormulas(sides);
 		// Assert
-		assertEquals(tester, tester, 96.51); //75.9 miles and kilos?
+		assertEquals(96.51, tester, .1); // 75.9 miles and kilos?
 	}
 
 	@Test(expected = java.lang.IllegalArgumentException.class)
@@ -1112,5 +754,663 @@ public class GeoTester {
 		double tester = GeometryIO.polygonAngleFormulas(-3);
 
 		// Assert
+	}
+	/*
+	 * Surface area
+	 */
+
+	@Test
+	public void surfaceAreaOfRectangularPrismValidDoublelength() { // valid double
+		// Arrange
+		double length = 7.2, width = 3, height = 1;
+		// Act
+		double tester = GeometryIO.surfaceAreaOfRectangularPrism(length, width, height);
+		// Assert
+		assertEquals(21.6, tester, .1);
+	}
+
+	@Test(expected = java.lang.IllegalArgumentException.class)
+	public void surfaceAreaOfRectangularPrismInvalidDoublelength() { // invalid double = 0
+		// Arrange
+		double length = 0, width = 3, height = 1;
+		// Act
+		double tester = GeometryIO.surfaceAreaOfRectangularPrism(length, width, height);
+		// Assert
+	}
+
+	@Test(expected = java.lang.IllegalArgumentException.class)
+	public void surfaceAreaOfRectangularPrismNegativeDoublelength() { // Negative double
+		// Arrange
+		double length = 7.2, width = 3, height = 1;
+		// Act
+		double tester = GeometryIO.surfaceAreaOfRectangularPrism(-3, width, height);
+		// Assert
+	}
+
+	@Test
+	public void surfaceAreaOfRectangularPrismValidDoublewidth() { // valid double
+		// Arrange
+		double length = 3, width = 6.2, height = 1;
+		// Act
+		double tester = GeometryIO.surfaceAreaOfRectangularPrism(length, width, height);
+		// Assert
+		assertEquals(18.6, tester, .1);
+	}
+
+	@Test(expected = java.lang.IllegalArgumentException.class)
+	public void surfaceAreaOfRectangularPrismInvalidDoublewidth() { // invalid double = 0
+		// Arrange
+		double length = 7.2, width = 0, height = 1;
+		// Act
+		double tester = GeometryIO.surfaceAreaOfRectangularPrism(length, width, height);
+		// Assert
+	}
+
+	@Test(expected = java.lang.IllegalArgumentException.class)
+	public void surfaceAreaOfRectangularPrismNegativeDoublewidth() { // Negative double
+		// Arrange
+		double length = 7.2, width = -9, height = 1;
+		// Act
+		double tester = GeometryIO.surfaceAreaOfRectangularPrism(length, width, height);
+		// Assert
+	}
+
+	@Test
+	public void surfaceAreaOfRectangularPrismValidDoubleHeight() { // valid double
+		// Arrange
+		double length = 2, width = 6.2, height = 1;
+		// Act
+		double tester = GeometryIO.surfaceAreaOfRectangularPrism(length, width, height);
+		// Assert
+
+		assertEquals(41.2, tester, .1);
+	}
+
+	@Test(expected = java.lang.IllegalArgumentException.class)
+	public void surfaceAreaOfRectangularPrismInvalidDoubleHeight() { // invalid double = 0
+		// Arrange
+		double length = 7.2, width = 3, height = 0;
+		// Act
+		double tester = GeometryIO.surfaceAreaOfRectangularPrism(length, width, height);
+		// Assert
+	}
+
+	@Test(expected = java.lang.IllegalArgumentException.class)
+	public void surfaceAreaOfRectangularPrismNegativeDoubleHeight() { // Negative double
+		// Arrange
+		double length = 7.2, width = 3, height = -1;
+		// Act
+		double tester = GeometryIO.surfaceAreaOfRectangularPrism(length, width, height);
+		// Assert
+	}
+
+	/*
+	 * surfaceAreaOfGeneralPrism
+	 */
+	@Test
+	public void surfaceAreaOfGeneralPrismValidDoubleBase() { // valid double
+		// Arrange
+		double a = 5, s = 4;
+		// Act
+		// .surfaceAreaOfTrapazoid(base, height);
+		double tester = GeometryIO.surfaceAreaOfGeneralPrism(1, 1, 1, 1, 1, 1);
+
+		// Assert
+		assertEquals(6, tester, 0);
+	}
+
+	@Test(expected = java.lang.IllegalArgumentException.class)
+	public void surfaceAreaOfGeneralPrismInvalidDoubleBase() { // invalid double = 0
+		// Arrange
+		double base = 0, height = 4;
+		// Act
+		double tester = GeometryIO.surfaceAreaOfGeneralPrism(0, 1, 1, 1, 1, 1);
+		// Assert
+	}
+
+	@Test(expected = java.lang.IllegalArgumentException.class)
+	public void surfaceAreaOfGeneralPrismNegativeDoubleBase() { // Negative double
+		// Arrange
+		double a;
+		// Act
+		double tester = GeometryIO.surfaceAreaOfGeneralPrism(-1, 1, 1, 1, 1, 1);
+		// Assert
+	}
+
+	@Test
+	public void surfaceAreaOfGeneralPrismValidDoubleBase2() { // valid double
+		// Arrange
+		double a = 5, s = 4;
+		// Act
+		// .surfaceAreaOfTrapazoid(base, height);
+		double tester = GeometryIO.surfaceAreaOfGeneralPrism(1, 1, 1, 1, 1, 1);
+		// Assert
+		assertEquals(6, tester, 0);
+	}
+
+	@Test(expected = java.lang.IllegalArgumentException.class)
+	public void surfaceAreaOfGeneralPrismInvalidDoubleBase2() { // invalid double = 0
+		// Arrange
+		double base = 0, height = 4;
+		// Act
+		double tester = GeometryIO.surfaceAreaOfGeneralPrism(1, 0, 1, 1, 1, 1);
+		// Assert
+	}
+
+	@Test(expected = java.lang.IllegalArgumentException.class)
+	public void surfaceAreaOfGeneralPrismNegativeDoubleBase2() { // Negative double
+		// Arrange
+		double a;
+		// Act
+		double tester = GeometryIO.surfaceAreaOfGeneralPrism(1, -1, 1, 1, 1, 1);
+		// Assert
+	}
+
+	@Test
+	public void surfaceAreaOfGeneralPrismValidDoubleBase3() { // valid double
+		// Arrange
+		double a = 5, s = 4;
+		// Act
+		// .surfaceAreaOfTrapazoid(base, height);
+		double tester = GeometryIO.surfaceAreaOfGeneralPrism(1, 1, 1, 1, 1, 1);
+		// Assert
+		assertEquals(6, tester, 0);
+	}
+
+	@Test(expected = java.lang.IllegalArgumentException.class)
+	public void surfaceAreaOfGeneralPrismInvalidDoubleBase3() { // invalid double = 0
+		// Arrange
+		double base = 0, height = 4;
+		// Act
+		double tester = GeometryIO.surfaceAreaOfGeneralPrism(0, 0, 0, 0, 0, 0);
+		// Assert
+	}
+
+	@Test(expected = java.lang.IllegalArgumentException.class)
+	public void surfaceAreaOfGeneralPrismNegativeDoubleBase3() { // Negative double
+		// Arrange
+		double a;
+		// Act
+		double tester = GeometryIO.surfaceAreaOfGeneralPrism(-1, -1, -1, -1, -1, -1);
+		// Assert
+	}
+
+	@Test
+	public void surfaceAreaOfGeneralPrismValidDoubleBase4() { // valid double
+		// Arrange
+		double a = 5, s = 4;
+		// Act
+		// .surfaceAreaOfTrapazoid(base, height);
+		double tester = GeometryIO.surfaceAreaOfGeneralPrism(1, 1, 1, 1, 1, 1);
+
+		// Assert
+		assertEquals(6, tester, 0);
+	}
+
+	@Test(expected = java.lang.IllegalArgumentException.class)
+	public void surfaceAreaOfGeneralPrismInvalidDoubleBase4() { // invalid double = 0
+		// Arrange
+		double base = 0, height = 4;
+		// Act
+		double tester = GeometryIO.surfaceAreaOfGeneralPrism(0, 0, 0, 0, 0, 0);
+		// Assert
+	}
+
+	@Test(expected = java.lang.IllegalArgumentException.class)
+	public void surfaceAreaOfGeneralPrismNegativeDoubleBase4() { // Negative double
+		// Arrange
+		double a;
+		// Act
+		double tester = GeometryIO.surfaceAreaOfGeneralPrism(-1, -1, -1, -1, -1, -1);
+		// Assert
+	}
+
+	@Test
+	public void surfaceAreaOfGeneralPrismValidDoubleBase5() { // valid double
+		// Arrange
+		double a = 5, s = 4;
+		// Act
+		// .surfaceAreaOfTrapazoid(base, height);
+		double tester = GeometryIO.surfaceAreaOfGeneralPrism(1, 1, 1, 1, 1, 1);
+		// Assert
+		assertEquals(6, tester, 0);
+	}
+
+	@Test(expected = java.lang.IllegalArgumentException.class)
+	public void surfaceAreaOfGeneralPrismInvalidDoubleBase5() { // invalid double = 0
+		// Arrange
+		double base = 0, height = 4;
+		// Act
+		double tester = GeometryIO.surfaceAreaOfGeneralPrism(0, 0, 0, 0, 0, 0);
+		// Assert
+	}
+
+	@Test(expected = java.lang.IllegalArgumentException.class)
+	public void surfaceAreaOfGeneralPrismNegativeDoubleBase5() { // Negative double
+		// Arrange
+		double a;
+		// Act
+		double tester = GeometryIO.surfaceAreaOfGeneralPrism(-1, -1, -1, -1, -1, -1);
+		// Assert
+	}
+
+	@Test
+	public void surfaceAreaOfGeneralPrismValidDoubleBase6() { // valid double
+		// Arrange
+		double a = 5, s = 4;
+		// Act
+		// .surfaceAreaOfTrapazoid(base, height);
+		double tester = GeometryIO.surfaceAreaOfGeneralPrism(1, 1, 1, 1, 1, 1);
+		// Assert
+		assertEquals(6, tester, 0);
+	}
+
+	@Test(expected = java.lang.IllegalArgumentException.class)
+	public void surfaceAreaOfGeneralPrismInvalidDoubleBase6() { // invalid double = 0
+		// Arrange
+		double base = 0, height = 4;
+		// Act
+		double tester = GeometryIO.surfaceAreaOfGeneralPrism(0, 0, 0, 0, 0, 0);
+		// Assert
+	}
+
+	public void surfaceAreaOfGeneralPrismNegativeDoubleBase6() { // Negative double
+		// Arrange
+		double a;
+		// Act
+		double tester = GeometryIO.surfaceAreaOfGeneralPrism(-1, -1, -1, -1, -1, -1);
+		// Assert
+	}
+
+	/*
+	 * Sphere
+	 */
+	@Test
+	public void surfaceAreaOfSphereValidDoubleSlantHeight() { // Valid Double
+		// Arrange
+		double radius = 4;
+		// Act
+		double tester = GeometryIO.surfaceAreaOfSphere(radius);
+		// Assert
+
+		assertEquals(201.06, tester, .1);
+	}
+
+	@Test(expected = java.lang.IllegalArgumentException.class)
+	public void surfaceAreaOfSphereInvalidDoubleSlantHeight() { // invalid double
+		// Arrange
+		double radius = 0;
+		// Act
+		double tester = GeometryIO.surfaceAreaOfSphere(radius);
+		// Assert
+	}
+
+	@Test(expected = java.lang.IllegalArgumentException.class)
+	public void surfaceAreaOfSphereNegativeDoubleSlantHeight() { // Negative double
+		// Arrange
+		double radius = -5;
+		// Act
+		double tester = GeometryIO.surfaceAreaOfSphere(radius);
+		// Assert
+	}
+
+	@Test
+	public void volumeOfGeneralPrismValid() { // Negative double
+		// Arrange
+		double base = 1, height = 1;
+		// Act
+		double tester = GeometryIO.volumeOfGeneralPrism(base, height);
+		// Assert
+		assertEquals(1, tester, .1);
+	}
+
+	@Test(expected = java.lang.IllegalArgumentException.class)
+	public void volumeOfGeneralPrismValidNegative() { // Negative double
+		// Arrange
+		double base = -1, height = 1;
+		// Act
+		double tester = GeometryIO.volumeOfGeneralPrism(base, height);
+		// Assert
+
+	}
+
+	@Test(expected = java.lang.IllegalArgumentException.class)
+	public void volumeOfGeneralPrismValidZero() { // Negative double
+		// Arrange
+		double base = 0, height = 1;
+		// Act
+		double tester = GeometryIO.volumeOfGeneralPrism(base, height);
+		// Assert
+
+	}
+
+	@Test(expected = java.lang.IllegalArgumentException.class)
+	public void volumeOfGeneralPrismValidNegative2() { // Negative double
+		// Arrange
+		double base = 1, height = -1;
+		// Act
+		double tester = GeometryIO.volumeOfGeneralPrism(base, height);
+		// Assert
+
+	}
+
+	@Test(expected = java.lang.IllegalArgumentException.class)
+	public void volumeOfGeneralPrismValidZero2() { // Negative double
+		// Arrange
+		double base = 1, height = 0;
+		// Act
+		double tester = GeometryIO.volumeOfGeneralPrism(base, height);
+		// Assert
+
+	}
+
+	@Test
+	public void volumeOfRectangularPrismValid() { // Negative double
+		// Arrange
+		double length = 1, height = 1, width = 1;
+		// Act
+		double tester = GeometryIO.volumeOfRectangularPrism(height, length, width);
+		// Assert
+		assertEquals(1, tester, .1);
+	}
+
+	@Test(expected = java.lang.IllegalArgumentException.class)
+	public void volumeOfRectangularPrismValidNegative() { // Negative double
+		// Arrange
+		double length = -1, height = 1, width = 1;
+		// Act
+		double tester = GeometryIO.volumeOfRectangularPrism(height, length, width);
+		// Assert
+
+	}
+
+	@Test(expected = java.lang.IllegalArgumentException.class)
+	public void volumeOfRectangularPrismValidZero() { // Negative double
+		// Arrange
+		double length = 0, height = 1, width = 1;
+		// Act
+		double tester = GeometryIO.volumeOfRectangularPrism(height, length, width);
+		// Assert
+
+	}
+
+	@Test(expected = java.lang.IllegalArgumentException.class)
+	public void volumeOfRectangularPrismValidNegative2() { // Negative double
+		// Arrange
+		double length = 1, height = -1, width = 1;
+		// Act
+		double tester = GeometryIO.volumeOfRectangularPrism(height, length, width);
+		// Assert
+
+	}
+
+	@Test(expected = java.lang.IllegalArgumentException.class)
+	public void volumeOfRectangularPrismValidZero2() { // Negative double
+		// Arrange
+		double length = 1, height = 0, width = 1;
+		// Act
+		double tester = GeometryIO.volumeOfRectangularPrism(height, length, width);
+		// Assert
+
+	}
+
+	@Test(expected = java.lang.IllegalArgumentException.class)
+	public void volumeOfRectangularPrismValidNegative3() { // Negative double
+		// Arrange
+		double length = 1, height = 1, width = -1;
+		// Act
+		double tester = GeometryIO.volumeOfRectangularPrism(height, length, width);
+		// Assert
+
+	}
+
+	@Test(expected = java.lang.IllegalArgumentException.class)
+	public void volumeOfRectangularPrismValidZero3() { // Negative double
+		// Arrange
+		double length = 1, height = 1, width = 0;
+		// Act
+		double tester = GeometryIO.volumeOfRectangularPrism(height, length, width);
+		// Assert
+
+	}
+
+	@Test
+	public void volumeOfSphereValid() { // Negative double
+		// Arrange
+		double radius = 1;
+		// Act
+		double tester = GeometryIO.volumeOfSphere(radius);
+		// Assert
+		assertEquals(4.19, tester, .1);
+	}
+
+	@Test(expected = java.lang.IllegalArgumentException.class)
+	public void volumeOfSphereValidNegative() { // Negative double
+		// Arrange
+		double radius = -1;
+		// Act
+		double tester = GeometryIO.volumeOfSphere(radius);
+		// Assert
+
+	}
+
+	@Test(expected = java.lang.IllegalArgumentException.class)
+	public void volumeOfSphereValidZero() { // Negative double
+		// Arrange
+		double radius = 0;
+		// Act
+		double tester = GeometryIO.volumeOfSphere(radius);
+		// Assert
+
+	}
+
+	@Test
+	public void circumferenceOfCircleValid() { // Negative double
+		// Arrange
+		double radius = 1;
+		// Act
+		double tester = GeometryIO.circumferenceOfCircle(radius);
+		// Assert
+		assertEquals(4.19, tester, .1);
+	}
+
+	@Test(expected = java.lang.IllegalArgumentException.class)
+	public void circumferenceOfCircleValidNegative() { // Negative double
+		// Arrange
+		double radius = -1;
+		// Act
+		double tester = GeometryIO.circumferenceOfCircle(radius);
+		// Assert
+
+	}
+
+	@Test(expected = java.lang.IllegalArgumentException.class)
+	public void circumferenceOfCircleValidZero() { // Negative double
+		// Arrange
+		double radius = 0;
+		// Act
+		double tester = GeometryIO.circumferenceOfCircle(radius);
+		// Assert
+
+	}
+
+
+	public void surfaceAreaOfRightCircularConeValid() { // Negative double
+		// Arrange
+		double areaOfBase = 3.14, radius = 1, slantHeight = 1.41, circumference = 6.28;
+		// Act
+		double tester = GeometryIO.surfaceAreaOfRightCircularCone(areaOfBase, radius, slantHeight, circumference);
+		// Assert
+		assertEquals(7.58, tester, .1);
+	}
+
+	@Test(expected = java.lang.IllegalArgumentException.class)
+	public void surfaceAreaOfRightCircularConeValidNegative() { // Negative double
+		// Arrange
+		double areaOfBase = -3.14, radius = 1, slantHeight = 1.41, circumference = 6.28;
+		// Act
+		double tester = GeometryIO.surfaceAreaOfRightCircularCone(areaOfBase, radius, slantHeight, circumference);
+		// Assert
+
+	}
+
+	@Test(expected = java.lang.IllegalArgumentException.class)
+	public void surfaceAreaOfRightCircularConeValidZero() { // Negative double
+		// Arrange
+		double areaOfBase = 0, radius = 1, slantHeight = 1.41, circumference = 6.28;
+		// Act
+		double tester = GeometryIO.surfaceAreaOfRightCircularCone(areaOfBase, radius, slantHeight, circumference);
+		// Assert
+
+	}
+
+	@Test(expected = java.lang.IllegalArgumentException.class)
+	public void surfaceAreaOfRightCircularConeValidNegative2() { // Negative double
+		// Arrange
+		double areaOfBase = 3.14, radius = -1, slantHeight = 1.41, circumference = 6.28;
+		// Act
+		double tester = GeometryIO.surfaceAreaOfRightCircularCone(areaOfBase, radius, slantHeight, circumference);
+		// Assert
+
+	}
+
+	@Test(expected = java.lang.IllegalArgumentException.class)
+	public void surfaceAreaOfRightCircularConeValidZero2() { // Negative double
+		// Arrange
+		double areaOfBase = 3.14, radius = 0, slantHeight = 1.41, circumference = 6.28;
+		// Act
+		double tester = GeometryIO.surfaceAreaOfRightCircularCone(areaOfBase, radius, slantHeight, circumference);
+		// Assert
+
+	}
+
+	@Test(expected = java.lang.IllegalArgumentException.class)
+	public void surfaceAreaOfRightCircularConeValidNegative3() { // Negative double
+		// Arrange
+		double areaOfBase = 3.14, radius = 1, slantHeight = -1.41, circumference = 6.28;
+		// Act
+		double tester = GeometryIO.surfaceAreaOfRightCircularCone(areaOfBase, radius, slantHeight, circumference);
+		// Assert
+
+	}
+
+	@Test(expected = java.lang.IllegalArgumentException.class)
+	public void surfaceAreaOfRightCircularConeValidZero3() { // Negative double
+		// Arrange
+		double areaOfBase = 3.14, radius = 1, slantHeight = 0, circumference = 6.28;
+		// Act
+		double tester = GeometryIO.surfaceAreaOfRightCircularCone(areaOfBase, radius, slantHeight, circumference);
+		// Assert
+
+	}
+
+	@Test(expected = java.lang.IllegalArgumentException.class)
+	public void surfaceAreaOfRightCircularConeValidNegative4() { // Negative double
+		// Arrange
+		double areaOfBase = 3.14, radius = 1, slantHeight = 1.41, circumference = -6.28;
+		// Act
+		double tester = GeometryIO.surfaceAreaOfRightCircularCone(areaOfBase, radius, slantHeight, circumference);
+		// Assert
+
+	}
+
+	@Test(expected = java.lang.IllegalArgumentException.class)
+	public void surfaceAreaOfRightCircularConeValidZero4() { // Negative double
+		// Arrange
+		double areaOfBase = 3.14, radius = 1, slantHeight = 1.41, circumference = 0;
+		// Act
+		double tester = GeometryIO.surfaceAreaOfRightCircularCone(areaOfBase, radius, slantHeight, circumference);
+		// Assert
+
+	}
+
+	@Test
+	public void surfaceAreaOfRightCircularPrismValid() { // Negative double
+		// Arrange
+		double base = 3.14, radius = 1, height = 1, circumference = 6.28;
+		// Act
+		double tester = GeometryIO.surfaceAreaOfRightCircularPrism(base, height, radius, circumference);
+		// Assert
+		assertEquals(12.52, tester, .1);
+	}
+
+	@Test(expected = java.lang.IllegalArgumentException.class)
+	public void surfaceAreaOfRightCircularPrismValidNegative() { // Negative double
+		// Arrange
+		double base = -3.14, radius = 1, height = 1, circumference = 6.28;
+		// Act
+		double tester = GeometryIO.surfaceAreaOfRightCircularPrism(base, height, radius, circumference);
+		// Assert
+
+	}
+
+	@Test(expected = java.lang.IllegalArgumentException.class)
+	public void surfaceAreaOfRightCircularPrismValidZero() { // Negative double
+		// Arrange
+		double base = 0, radius = 1, height = 1, circumference = 6.28;
+		// Act
+		double tester = GeometryIO.surfaceAreaOfRightCircularPrism(base, height, radius, circumference);
+		// Assert
+
+	}
+
+	@Test(expected = java.lang.IllegalArgumentException.class)
+	public void surfaceAreaOfRightCircularPrismValidNegative2() { // Negative double
+		// Arrange
+		double base = 3.14, radius = -1, height = 1, circumference = 6.28;
+		// Act
+		double tester = GeometryIO.surfaceAreaOfRightCircularPrism(base, height, radius, circumference);
+		// Assert
+
+	}
+
+	@Test(expected = java.lang.IllegalArgumentException.class)
+	public void surfaceAreaOfRightCircularPrismValidZero2() { // Negative double
+		// Arrange
+		double base = 3.14, radius = 0, height = 1, circumference = 6.28;
+		// Act
+		double tester = GeometryIO.surfaceAreaOfRightCircularPrism(base, height, radius, circumference);
+		// Assert
+
+	}
+
+	@Test(expected = java.lang.IllegalArgumentException.class)
+	public void surfaceAreaOfRightCircularPrismValidNegative3() { // Negative double
+		// Arrange
+		double base = 3.14, radius = 1, height = -1, circumference = 6.28;
+		// Act
+		double tester = GeometryIO.surfaceAreaOfRightCircularPrism(base, height, radius, circumference);
+		// Assert
+
+	}
+
+	@Test(expected = java.lang.IllegalArgumentException.class)
+	public void surfaceAreaOfRightCircularPrismValidZero3() { // Negative double
+		// Arrange
+		double base = 3.14, radius = 1, height = 0, circumference = 6.28;
+		// Act
+		double tester = GeometryIO.surfaceAreaOfRightCircularPrism(base, height, radius, circumference);
+		// Assert
+
+	}
+
+	@Test(expected = java.lang.IllegalArgumentException.class)
+	public void surfaceAreaOfRightCircularPrismValidNegative4() { // Negative double
+		// Arrange
+		double base = 3.14, radius = 1, height = 1, circumference = -6.28;
+		// Act
+		double tester = GeometryIO.surfaceAreaOfRightCircularPrism(base, height, radius, circumference);
+		// Assert
+
+	}
+
+	@Test(expected = java.lang.IllegalArgumentException.class)
+	public void surfaceAreaOfRightCircularPrismValidZero4() { // Negative double
+		// Arrange
+		double base = 3.14, radius = 1, height = 1, circumference = 0;
+		// Act
+		double tester = GeometryIO.surfaceAreaOfRightCircularPrism(base, height, radius, circumference);
+		// Assert
+
 	}
 }
