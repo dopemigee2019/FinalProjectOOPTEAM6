@@ -80,7 +80,7 @@ public class CompressionLibrary {
 		
 		boolean isComplete = false;
 		
-		if (exportType.length() == 3 || exportType.length() == 4) {
+		if (exportType.length() != 3 || exportType.length() != 4) throw new IllegalArgumentException("Supports .jpg, .bmp, and .jpg");
 			
 			try {
 				String namer = tempPath.toString() + "//tempForCompression.jpg";
@@ -118,7 +118,7 @@ public class CompressionLibrary {
 				b.printStackTrace();
 				isComplete =false;
 			}
-		}
+		
 		
 		return isComplete;
 	}
@@ -128,7 +128,7 @@ public class CompressionLibrary {
 		
 		boolean isComplete = false;
 		
-		if (compressScale0_1 > 0 || compressScale0_1 <= 1) {
+		if (compressScale0_1 <= 0 || compressScale0_1 > 1) throw new IllegalArgumentException("Must be a double between 1-0.");
 			
 			try {
 
@@ -182,7 +182,7 @@ public class CompressionLibrary {
 				c.printStackTrace();
 				isComplete = false;
 			}
-		}
+		
 		
 		return isComplete;
 	}

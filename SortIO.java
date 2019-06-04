@@ -92,6 +92,17 @@ public class SortIO {
 	
 	public static<T extends Comparable> List<T> sortByPriority(List<T> input, boolean priorityIsLow, T IPrioritize){
 		
+		if (input == null) throw new IllegalArgumentException("Cannot be Null");
+		
+			if (priorityIsLow) {
+				IPrioritize.compareTo(IPrioritize);
+			
+			}else if (!priorityIsLow) {
+				IPrioritize.compareTo(IPrioritize);
+				Collections.sort(input, Collections.reverseOrder());
+			
+			}
+
 		return null;
 	}
 
