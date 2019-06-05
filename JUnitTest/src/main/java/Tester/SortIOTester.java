@@ -59,6 +59,11 @@ public class SortIOTester {
 
 		assertEquals(tester, integerList);
 	}
+	@Test(expected = java.lang.IllegalArgumentException.class)
+	public void sortWithNullsNullInp() { // FALSE BOOLEAN
+		List<Integer> tester = new ArrayList<Integer>();
+		tester = SortIO.sortWithNulls(null, true);
+	}
 	/*
 	 * START OF SORT ARRAY LIST ASSENDING / DECENDING
 	 */
@@ -113,7 +118,7 @@ public class SortIOTester {
 	/*
 	 * String Sort
 	 */
-	public void stringSprtValidArray() { // VALID ARRAY LIST
+	public void stringSortValidArray() { // VALID ARRAY LIST
 		List<String> integerList = new ArrayList<String>();
 		integerList.add("10");
 	    integerList.add("9");
@@ -127,7 +132,7 @@ public class SortIOTester {
 		assertEquals(tester, integerList);
 	}
 	@Test (expected = NullPointerException.class)
-	public void stringSprtInvalidArray() { // INVALID ARRAY LIST
+	public void stringSortInvalidArray() { // INVALID ARRAY LIST
 		List<String> integerList = new ArrayList<String>();
 		integerList.add("10");
 	    integerList.add("9");
@@ -140,7 +145,7 @@ public class SortIOTester {
 		
 	}
 	@Test
-	public void stringSprtEmptyArray() { // EMPTY ARRAY LIST
+	public void stringSortEmptyArray() { // EMPTY ARRAY LIST
 		List<String> integerList = new ArrayList<String>();
 		List<String> tester = new ArrayList<String>();
 		tester = SortIO.sort(integerList, true);
@@ -148,7 +153,7 @@ public class SortIOTester {
 		assertEquals(tester, integerList);
 	}
 	@Test
-	public void stringSprtValidBoolean() { // VALID BOOLEAN
+	public void stringSortValidBoolean() { // VALID BOOLEAN
 		List<String> integerList = new ArrayList<String>();
 		List<String> tester = new ArrayList<String>();
 		tester = SortIO.sort(integerList, true);
@@ -156,7 +161,7 @@ public class SortIOTester {
 		assertEquals(tester, integerList);
 	}
 	@Test
-	public void stringSprtFalseBoolean() { // INVALID BOOLEAN
+	public void stringSortFalseBoolean() { // INVALID BOOLEAN
 		List<String> integerList = new ArrayList<String>();
 		integerList.add("10");
 	    integerList.add("9");
@@ -169,6 +174,12 @@ public class SortIOTester {
 
 		assertEquals(tester, integerList);
 	}
+	@Test(expected = java.lang.IllegalArgumentException.class)
+	public void stringSortNull() { // INVALID BOOLEAN
+		List<String> tester = new ArrayList<String>();
+		tester = SortIO.sort(null, false);
+	}
+
 	/*
 	 * START OF SORT ALPHANUMERIC STRING
 	 */
@@ -207,4 +218,73 @@ public class SortIOTester {
 		input = SortIO.sortStringAlphaNumeric(input, true);
 		assertEquals(input, tester);
 	}
+	@Test(expected = java.lang.IllegalArgumentException.class)
+	public void sorAlphaNumericNull() { // FALSE BOOLEAN
+		String input = null;
+		String tester = "2abbs";
+		input = SortIO.sortStringAlphaNumeric(input, true);
+		assertEquals(input, tester);
+	}
+	/*
+	 * Compare
+	 */
+	@Test
+	public void stringPrioritizeValidArray() { // VALID ARRAY LIST
+		List<Integer> integerList = new ArrayList<Integer>();
+	    integerList.add(Integer.valueOf(9));
+	    integerList.add(Integer.valueOf(11));
+	    integerList.add(Integer.valueOf(10));
+		List<Integer> tester = new ArrayList<Integer>();
+		tester = SortIO.sortByPriority(integerList, false, 10);
+
+		assertEquals(tester, integerList);
+	}
+	@Test(expected = java.lang.IllegalArgumentException.class)
+	public void stringPrioritizeInvalidArray() { // INVALID ARRAY LIST
+		List<Integer> integerList = new ArrayList<Integer>();
+		integerList.add(null);
+	    integerList.add(Integer.valueOf(9));
+	    integerList.add(Integer.valueOf(8));
+	    integerList.add(Integer.valueOf(11));
+		List<Integer> tester = new ArrayList<Integer>();
+		tester = SortIO.sortByPriority(null, false, 1);
+		
+	}
+	@Test
+	public void stringPrioritizeEmptyArray() { // EMPTY ARRAY LIST
+		List<Integer> integerList = new ArrayList<Integer>();
+		List<Integer> tester = new ArrayList<Integer>();
+		tester = SortIO.sortByPriority(integerList, false, 1);
+		assertEquals(tester, integerList);
+	}
+	@Test
+	public void stringPrioritizeValidBoolean() { // VALID BOOLEAN
+		List<Integer> integerList = new ArrayList<Integer>();
+		integerList.add(null);
+	    integerList.add(Integer.valueOf(9));
+	    integerList.add(Integer.valueOf(8));
+	    integerList.add(Integer.valueOf(11));
+		List<Integer> tester = new ArrayList<Integer>();
+		tester = SortIO.sortByPriority(integerList, true, 1);
+		assertEquals(tester, integerList);
+	}
+	@Test
+	public void stringPrioritizeFalseBoolean() { // INVALID BOOLEAN
+		List<Integer> integerList = new ArrayList<Integer>();
+	    integerList.add(Integer.valueOf(9));
+	    integerList.add(Integer.valueOf(8));
+	    integerList.add(Integer.valueOf(11));
+		List<Integer> tester = new ArrayList<Integer>();
+		tester = SortIO.sortByPriority(integerList, false, 1);
+		assertEquals(tester, integerList);
+		
+		assertEquals(tester, integerList);
+	}
+	@Test(expected = java.lang.IllegalArgumentException.class)
+	public void stringPrioritizeNull() { // INVALID BOOLEAN
+		List<Integer> integerList = new ArrayList<Integer>();
+		List<Integer> tester = new ArrayList<Integer>();
+		tester = SortIO.sortByPriority(null, false, 1);
+	}
+
 }
