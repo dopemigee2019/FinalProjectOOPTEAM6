@@ -57,8 +57,13 @@ public class SortIO {
 			try {
 				char[] sortArray = input.toCharArray();
 				Arrays.sort(sortArray);
-				Collections.sort(Arrays.asList(sortArray), Collections.reverseOrder());
-				output = new String (sortArray);
+				//Collections.sort(Arrays.asList(sortArray), Collections.reverseOrder());
+				//Arrays.sort(sortArray, Collections.reverseOrder());
+				String toReverse = new String(sortArray);
+			    output = "";
+			    for (int i = toReverse.length() - 1; i >= 0; i--) {
+			        output += sortArray[i];
+			    }
 			}
 			catch(NullPointerException a) {
 				a.printStackTrace();
@@ -71,7 +76,7 @@ public class SortIO {
 	public static ArrayList<String> sortStringsByLength(ArrayList<String> input, boolean lengthIsLow){
 		ArrayList<String> output = input;
 		
-		if (input == null) throw new IllegalArgumentException("Cannot be Null");
+		
 		
 		if (lengthIsLow) {
 			try {
